@@ -35,8 +35,9 @@ function App() {
 
     return (
         <Router>
+          <Navbar />
             <div className="container mx-auto p-4">
-                <Navbar />
+                
                 <Routes>
                     <Route path="/" element={<BookList books={books} wishlist={wishlist} toggleWishlist={toggleWishlist} />} />
                     <Route path="/book/:id" element={<BookDetails books={books} toggleWishlist={toggleWishlist} />} />

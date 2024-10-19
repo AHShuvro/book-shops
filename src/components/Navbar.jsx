@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom';
+import { FaBars } from "react-icons/fa6";
+
 
 function Navbar() {
     
@@ -20,14 +22,14 @@ function Navbar() {
                         className="text-gray-700 focus:outline-none" 
                         onClick={() => setIsOpen(!isOpen)}
                     >
-                        &#9776; 
+                        <FaBars />
                     </button>
                 </div>
             </div>
             {isOpen && (
                 <div className="md:hidden flex flex-col p-4 bg-white border-t border-gray-200">
-                    <Link to="/" className="py-2 text-gray-700 hover:text-blue-500">Home</Link>
-                    <Link to="/wishlist" className="py-2 text-gray-700 hover:text-blue-500">Wishlist</Link>
+                    <Link onClick={() => setIsOpen(!isOpen)} to="/" className="py-2 text-gray-700 hover:text-blue-500 sm:text-lg">Home</Link>
+                    <Link onClick={() => setIsOpen(!isOpen)} to="/wishlist" className="py-2 text-gray-700 hover:text-blue-500 sm:text-lg">Wishlist</Link>
                 </div>
             )}
         </div>

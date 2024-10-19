@@ -6,7 +6,7 @@ function BookList({ books, wishlist, toggleWishlist }) {
     const [searchTerm, setSearchTerm] = useState('');
     const [genre, setGenre] = useState('All');
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 10;
+    const itemsPerPage = 9;
 
     
     const genres = Array.from(new Set(books.flatMap(book =>
@@ -45,7 +45,7 @@ function BookList({ books, wishlist, toggleWishlist }) {
                     <option key={index} value={g}>{g}</option>
                 ))}
             </select>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {currentBooks.map(book => (
                     <BookCard key={book.id} book={book} toggleWishlist={toggleWishlist} isWishlisted={wishlist.includes(book.id)} />
                 ))}
